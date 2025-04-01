@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WangKanChi | 主页</title>
+    <title>WangKanChi | 主页 Sink服务</title>
     <link rel="icon" href="/logo.jpg">
     <link rel="stylesheet" type="text/css" href="/css/index.css">
     <meta name="keywords" content="Heiye,黑曳のHeiye,黑曳,zhanghaoyu,张浩宇">
@@ -16,20 +16,11 @@
             var userPassword = prompt('请输入密码:', '');
 
             if (userPassword === correctPassword) {
-                showPopup();
+                dg.showModal();
+                alert("这疑似与Base64有关？")
             } else {
                 alert('密码错误！');
             }
-        }
-
-        function showPopup() {
-            var overlay = document.getElementById("overlay");
-            overlay.style.display = "block";
-        }
-
-        function hidePopup() {
-            var overlay = document.getElementById("overlay");
-            overlay.style.display = "none";
         }
 
         // 在页面加载完成后绑定事件
@@ -60,19 +51,46 @@
         </div>
 
 
-        <div id="overlay"
-            style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1000;">
-            <div class="popup"
-                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border-radius: 10px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; height: 250px; width: 500px;">
-                <p class="popup_title">提示</p>
-                <p class="popup_content">不准哭哟！男生要坚强！听到没？万康驰！</p>
-                <br>
-                <div class="popup_btn">
-                    <button class="confirmBtn" onclick="hidePopup()">确认</button>
-                </div>
-            </div>
-        </div>
 
+        <dialog id="dg" style="border-radius: 10px;position: fixed; 
+        width: 30%;
+        height: 40%;
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        align-items: center; 
+        border-width: 1px;">
+            <p class="popup_title" style="text-align: center;">5o+Q56S677ya</p>
+
+            <p class="popup_content" style="word-wrap: break-word; line-height: 20px;">5p2l6IeqU2lua+eahOivne+8mgo=</p>
+            <p class="popup_content" style="word-wrap: break-word; line-height: 20px;">VGltZSBpcyBydW5uaW5nIG91dCBmb3IgZnJpZW5kc2hpcHMgdG8gbGFzdOKApuKApg==</p>
+            <p class="popup_content" style="word-wrap: break-word; line-height: 20px;">SSB3YW50IHRvIGhhdmUgYSBnb29kIHRpbWUgd2l0aCB5b3UgaW4gdGhlIGxhc3QgbWludXRlLi4uLi4u</p>
+            <p class="popup_content" style="word-wrap: break-word; line-height: 20px;">U28geW91IGFuZCBJIGFyZSB0aGUgc2FtZSB0eXBlISBJIG9ubHkgaGF2ZSBvbmUgZ29vZCBmcmllbmQgZnJvbSB5b3UsIGFuZCBJIGRvbid0IHdhbnQgdG8gc2F5IGdvb2RieWUgdG8geW91ISDigKbigKY=</p>
+            <p class="popup_content" style="word-wrap: break-word;">Thank you, Wan Kangchi! ……</p>
+            <br>
+            <div class="popup_btn" style=" width: 95%; text-align: center;justify-content: center;">
+                <button class="confirmBtn" onclick="dg.close();"
+                    style="width: 95%;cursor: pointer; justify-content: center;">确认</button>
+            </div>
+        </dialog>
+
+        <dialog id="pw" style="border-radius: 10px;position: fixed; 
+        width: 30%;
+        height: 15%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        align-items: center; 
+        border-width: 1px;">
+            <p class="popup_title" style="text-align: center;">请输入密码：</p>
+            <input type="password" id="ipd" class="ipd" style="width: 98%; height: auto; font-size: 15px;">
+            <br>
+            <div class="popup_btn" style=" width: 95%; text-align: center;justify-content: center;">
+                <button class="confirmBtn" onclick="dg.close();"
+                    style="width: 95%;cursor: pointer; justify-content: center;">确认</button>
+            </div>
+        </dialog>
     </div>
 
 
